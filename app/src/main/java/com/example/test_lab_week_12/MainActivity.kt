@@ -42,9 +42,7 @@ class MainActivity : AppCompatActivity(), MovieAdapter.MovieClickListener {
 
                 launch {
                     movieViewModel.popularMovies.collect { movies ->
-                        movieAdapter.updateMovies(
-                            movies.sortedByDescending { it.popularity }
-                        )
+                        movieAdapter.updateMovies(movies)
                     }
                 }
                 launch {
